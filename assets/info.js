@@ -2,15 +2,39 @@ const guildData = {
   name: "REAL[MFS]",
   tagline: "Win. This is the way.",
 
-  region: "US East Region",
-
-
-  members: {
-    current: 45,
-    max: 50
+  titles: {
+    1_title: "GUILD",
+    2_title: "WHO WE ARE",
+    3_title: "REQUIREMENTS",
+    4_title: "DOTA 2 TOOLS",
+    5_title: "JOIN"
   },
 
-  quote: `"Say what again. I dare you."`,
+  guild: {
+    region: "US East Region",
+    tier: "Platinum Tier — Top 97%",
+    members: {
+      current: 45,
+      max: 50
+    }
+  },
+
+  whoWeAre: {
+    lines: [
+      "Real MFs only.",
+      "Active players. No excuses.",
+      "Contracts completed daily.",
+      "We win lanes. We take towers. We end games."
+    ],
+    quote: `"Join us… if you can keep up."`
+  },
+
+  requirements: [
+    "Stay active",
+    "Complete guild contracts",
+    "No inactivity",
+    "Respect the grind"
+  ],
 
   tools: [
     {

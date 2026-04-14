@@ -158,42 +158,31 @@ footer {
 <div class="main">
 
   <div class="card">
-    <h2>GUILD</h2>
-    <div class="quote" id="quote"></div>
+    <h2 id="titleGuild"></h2>
     <div class="stat" id="region"></div>
+    <div class="stat" id="tier"></div>
     <div class="stat" id="members"></div>
     <div id="recruitmentStatus"></div>
-
-  
   </div>
 
   <div class="card">
-    <h2>WHO WE ARE</h2>
-    <div class="rules">
-      Real MFs only.<br>
-      Active players. No excuses.<br>
-      Contracts completed daily.<br>
-      We win lanes. We take towers. We end games.
-    </div>
+    <h2 id="titleWho"></h2>
+    <div class="rules" id="whoLines"></div>
+    <div class="quote" id="quote"></div>
   </div>
 
   <div class="card">
-    <h2>REQUIREMENTS</h2>
-    <div class="rules">
-      • Stay active<br>
-      • Complete guild contracts<br>
-      • No inactivity<br>
-      • Respect the grind
-    </div>
+    <h2 id="titleReq"></h2>
+    <div class="rules" id="requirements"></div>
   </div>
 
   <div class="card">
-    <h2>DOTA 2 TOOLS</h2>
+    <h2 id="titleTools"></h2>
     <div class="tools" id="tools"></div>
   </div>
 
   <div class="card">
-    <h2>JOIN</h2>
+    <h2 id="titleJoin"></h2>
     <a id="discordBtn" class="btn" target="_blank">ENTER DISCORD</a>
   </div>
 
@@ -208,26 +197,41 @@ footer {
 <script>
 const data = guildData;
 
-// Basic info
+// TITLES (numbered system)
+document.getElementById("titleGuild").textContent = data.titles["1_title"];
+document.getElementById("titleWho").textContent = data.titles["2_title"];
+document.getElementById("titleReq").textContent = data.titles["3_title"];
+document.getElementById("titleTools").textContent = data.titles["4_title"];
+document.getElementById("titleJoin").textContent = data.titles["5_title"];
+
+// HEADER
 document.getElementById("guildName").textContent = data.name;
 document.getElementById("tagline").textContent = data.tagline;
-document.getElementById("region").textContent = data.region;
-document.getElementById("quote").textContent = data.quote;
 
-// Members
+// GUILD
+document.getElementById("region").textContent = data.guild.region;
+document.getElementById("tier").textContent = data.guild.tier;
+
 const membersEl = document.getElementById("members");
-membersEl.innerHTML = `${data.members.current} / ${data.members.max} Members`;
+membersEl.innerHTML = `${data.guild.members.current} / ${data.guild.members.max} Members`;
 
 const statusEl = document.getElementById("recruitmentStatus");
 
-if (data.members.current < data.members.max) {
+if (data.guild.members.current < data.guild.members.max) {
   membersEl.innerHTML += `<span class="recruiting-dot"></span>`;
   statusEl.innerHTML = `<div class="recruiting-text">Recruitment Active</div>`;
 } else {
   statusEl.innerHTML = `<div class="full-text">Guild is currently full</div>`;
 }
 
-// Tools
+// WHO WE ARE
+document.getElementById("whoLines").innerHTML = data.whoWeAre.lines.join("<br>");
+document.getElementById("quote").textContent = data.whoWeAre.quote;
+
+// REQUIREMENTS
+document.getElementById("requirements").innerHTML = data.requirements.map(r => `• ${r}`).join("<br>");
+
+// TOOLS
 const toolsContainer = document.getElementById("tools");
 
 data.tools.forEach(tool => {
@@ -244,7 +248,7 @@ data.tools.forEach(tool => {
   toolsContainer.appendChild(el);
 });
 
-// Discord
+// DISCORD
 document.getElementById("discordBtn").href = data.discord;
 </script>
 
