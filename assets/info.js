@@ -12,7 +12,7 @@ const guildData = {
 
   guild: {
     region: "US East Region",
-    tier: "Platinum Tier — Top 97%",
+    tier: "",
     members: {
       current: 45,
       max: 50
