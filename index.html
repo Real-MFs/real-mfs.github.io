@@ -5,192 +5,173 @@
 <title>Real[MFS]</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Orbitron', Arial, sans-serif;
+  font-family: 'Orbitron', sans-serif;
   background: radial-gradient(circle at top, #1a0000, #050507);
   color: #e6e6e6;
+  text-align: center;
 }
 
-/* HEADER */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
-  border-bottom: 1px solid rgba(255,0,0,0.2);
+/* LOGO + TITLE */
+.header {
+  padding: 60px 20px 30px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.header img {
+  width: 70px;
+  margin-bottom: 15px;
 }
 
-.logo img {
-  width: 40px;
-}
-
-.logo h1 {
+.header h1 {
   margin: 0;
+  font-size: 40px;
   color: #ff3c3c;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
-.tagline {
-  font-size: 12px;
+.header p {
+  margin-top: 10px;
   color: #888;
+  font-size: 14px;
 }
 
-/* LAYOUT */
-.container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 25px;
-  padding: 30px;
+/* MAIN BOX */
+.main {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
 }
 
-/* CARDS */
+/* CARD */
 .card {
   background: rgba(20,20,25,0.85);
-  border: 1px solid rgba(255,0,0,0.15);
-  border-radius: 10px;
-  padding: 20px;
+  border: 1px solid rgba(255,0,0,0.2);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
   backdrop-filter: blur(6px);
   transition: 0.3s;
 }
 
 .card:hover {
   border-color: rgba(255,60,60,0.5);
-  box-shadow: 0 0 20px rgba(255,0,0,0.2);
+  box-shadow: 0 0 25px rgba(255,0,0,0.15);
 }
 
 .card h2 {
-  font-size: 14px;
   color: #ff4d4d;
-  letter-spacing: 1px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
 }
 
-/* MEMBERS */
-.member {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #1f1f1f;
+/* STATS */
+.stat {
+  margin: 8px 0;
+  font-size: 14px;
 }
 
-/* LEADERBOARD */
-.rank {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
+/* RULES */
+.rules {
+  font-size: 13px;
+  color: #bbb;
+  line-height: 1.6;
 }
 
 /* BUTTON */
 .btn {
-  display: block;
-  text-align: center;
-  padding: 12px;
+  display: inline-block;
   margin-top: 15px;
+  padding: 12px 30px;
   background: linear-gradient(90deg, #ff2a2a, #8b0000);
   border-radius: 6px;
   text-decoration: none;
   color: white;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .btn:hover {
-  box-shadow: 0 0 15px red;
+  box-shadow: 0 0 20px red;
 }
 
-/* MF QUOTE */
+/* QUOTE */
 .quote {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #777;
   font-style: italic;
-  color: #aaa;
-  margin-top: 10px;
-  font-size: 13px;
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
+  margin-top: 40px;
   padding: 20px;
-  color: #666;
+  font-size: 12px;
+  color: #555;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">
-    <!-- Dota Logo -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Dota_2_logo.svg">
-    <h1>REAL[MFS]</h1>
-  </div>
-  <div class="tagline">Win. No excuses.</div>
-</header>
+<div class="header">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Dota_2_logo.svg">
+  <h1>REAL[MFS]</h1>
+  <p>Win. This is the way.</p>
+</div>
 
-<div class="container">
+<div class="main">
 
-  <!-- LEFT -->
-  <div>
+  <!-- GUILD INFO -->
+  <div class="card">
+    <h2>GUILD</h2>
+    <div class="stat">US East Region</div>
+    <div class="stat">Platinum Tier — Top 97%</div>
+    <div class="stat">45 / 50 Members</div>
 
-    <div class="card">
-      <h2>GUILD STATUS</h2>
-      <p><b>Region:</b> US East</p>
-      <p><b>Tier:</b> Platinum (97th percentile)</p>
-      <p><b>Members:</b> 45 / 50</p>
-
-      <div class="quote">
-        "Say what again. I dare you. I double dare you."  
-        – Samuel L. Jackson Energy
-      </div>
+    <div class="quote">
+      "Say what again. I dare you."
     </div>
-
-    <div class="card">
-      <h2>ACTIVE MEMBERS</h2>
-
-      <div class="member"><span>Lightfoot1678</span><span>12,670</span></div>
-      <div class="member"><span>HAT3</span><span>11,830</span></div>
-      <div class="member"><span>Pablo</span><span>11,500</span></div>
-      <div class="member"><span>Broly</span><span>10,350</span></div>
-
-    </div>
-
   </div>
 
-  <!-- RIGHT -->
-  <div>
-
-    <div class="card">
-      <h2>LEADERBOARD</h2>
-
-      <div class="rank"><span>#1 RealMF</span><span>223,590</span></div>
-      <div class="rank"><span>#2 Cornelius</span><span>221,630</span></div>
-      <div class="rank"><span>#3 Reijust</span><span>214,700</span></div>
-      <div class="rank"><span>#4 hitman89</span><span>206,810</span></div>
-      <div class="rank"><span>#5 No Comms</span><span>186,930</span></div>
-
+  <!-- WHAT WE ARE -->
+  <div class="card">
+    <h2>WHO WE ARE</h2>
+    <div class="rules">
+      Real MFs only.<br>
+      Active players. No excuses.<br>
+      Contracts completed daily.<br>
+      We win lanes. We take towers. We end games.
     </div>
+  </div>
 
-    <div class="card">
-      <h2>JOIN THE MFs</h2>
-      <p>Contracts required. No inactive players.</p>
-
-      <a href="https://discord.gg/BTbaQUJK4K" target="_blank" class="btn">
-        Join Discord
-      </a>
+  <!-- REQUIREMENTS -->
+  <div class="card">
+    <h2>REQUIREMENTS</h2>
+    <div class="rules">
+      • Stay active<br>
+      • Complete guild contracts<br>
+      • No inactivity<br>
+      • Respect the grind
     </div>
+  </div>
 
+  <!-- JOIN -->
+  <div class="card">
+    <h2>JOIN</h2>
+    <a href="https://discord.gg/BTbaQUJK4K" target="_blank" class="btn">
+      ENTER DISCORD
+    </a>
   </div>
 
 </div>
 
 <footer>
-  © REAL[MFS] — This is the way.
+  © REAL[MFS] — Built different.
 </footer>
 
 </body>
