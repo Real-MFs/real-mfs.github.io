@@ -5,7 +5,7 @@ const guildData = {
   titles: {
     "1_title": "GUILD",
     "2_title": "WHO WE ARE",
-    "3_title": "REQUIREMENTS",
+    "3_title": "NEWS",
     "4_title": "DOTA 2 TOOLS",
     "5_title": "JOIN"
   },
@@ -24,16 +24,15 @@ const guildData = {
       "Real MFs only.",
       "Active players. No excuses.",
       "Contracts completed daily.",
-      "We win lanes. We take towers. We end games."
     ],
     quote: `"Join us… if you can keep up."`
   },
 
   requirements: [
-    "Stay active",
-    "Complete guild contracts",
-    "No inactivity",
-    "Respect the grind"
+    "Congrats to our Major MFs: Reijust & Darknight",
+    "We have a new Discord group! join today",
+    "Inactivity checks are done every 2 weeks",
+    "Giveaways coming soon… stay tuned"
   ],
 
   tools: [
