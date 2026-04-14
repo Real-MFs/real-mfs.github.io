@@ -21,7 +21,7 @@ body {
 }
 
 .header img {
-  width: 70px;
+  width: 90px;
   margin-bottom: 15px;
 }
 
@@ -81,6 +81,39 @@ body {
   line-height: 1.6;
 }
 
+/* TOOLS */
+.tools {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tool {
+  display: block;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,0,0,0.1);
+  transition: 0.2s;
+}
+
+.tool span {
+  display: block;
+  color: #ff4d4d;
+  font-size: 14px;
+}
+
+.tool small {
+  color: #888;
+  font-size: 12px;
+}
+
+.tool:hover {
+  border-color: rgba(255,60,60,0.5);
+  background: rgba(255,0,0,0.05);
+}
+
 /* BUTTON */
 .btn {
   display: inline-block;
@@ -119,7 +152,7 @@ footer {
 <body>
 
 <div class="header">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Dota_2_logo.svg">
+  <img src="https://www.citypng.com/public/uploads/preview/hd-dota-2-official-logo-png-701751694788589vbfyq561nz.png">
   <h1>REAL[MFS]</h1>
   <p>Win. This is the way.</p>
 </div>
@@ -138,7 +171,7 @@ footer {
     </div>
   </div>
 
-  <!-- WHAT WE ARE -->
+  <!-- WHO WE ARE -->
   <div class="card">
     <h2>WHO WE ARE</h2>
     <div class="rules">
@@ -157,6 +190,40 @@ footer {
       • Complete guild contracts<br>
       • No inactivity<br>
       • Respect the grind
+    </div>
+  </div>
+
+  <!-- DOTA 2 TOOLS -->
+  <div class="card">
+    <h2>DOTA 2 TOOLS</h2>
+
+    <div class="tools">
+
+      <a href="https://www.opendota.com" target="_blank" class="tool">
+        <span>OpenDota</span>
+        <small>Match stats & deep analysis</small>
+      </a>
+
+      <a href="https://stratz.com" target="_blank" class="tool">
+        <span>STRATZ</span>
+        <small>Advanced player insights</small>
+      </a>
+
+      <a href="https://www.dotabuff.com" target="_blank" class="tool">
+        <span>Dotabuff</span>
+        <small>Meta builds & trends</small>
+      </a>
+
+      <a href="https://dota2protracker.com" target="_blank" class="tool">
+        <span>Pro Tracker</span>
+        <small>High MMR builds</small>
+      </a>
+
+      <a href="https://liquipedia.net/dota2" target="_blank" class="tool">
+        <span>Liquipedia</span>
+        <small>Teams, tournaments & info</small>
+      </a>
+
     </div>
   </div>
 
