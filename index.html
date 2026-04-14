@@ -15,7 +15,6 @@ body {
   text-align: center;
 }
 
-/* LOGO + TITLE */
 .header {
   padding: 60px 20px 30px;
 }
@@ -38,14 +37,12 @@ body {
   font-size: 14px;
 }
 
-/* MAIN BOX */
 .main {
   max-width: 700px;
   margin: auto;
   padding: 20px;
 }
 
-/* CARD */
 .card {
   background: rgba(20,20,25,0.85);
   border: 1px solid rgba(255,0,0,0.2);
@@ -68,20 +65,17 @@ body {
   margin-bottom: 15px;
 }
 
-/* STATS */
 .stat {
   margin: 8px 0;
   font-size: 14px;
 }
 
-/* RULES */
 .rules {
   font-size: 13px;
   color: #bbb;
   line-height: 1.6;
 }
 
-/* TOOLS */
 .tools {
   display: flex;
   flex-direction: column;
@@ -95,13 +89,11 @@ body {
   border-radius: 6px;
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,0,0,0.1);
-  transition: 0.2s;
 }
 
 .tool span {
   display: block;
   color: #ff4d4d;
-  font-size: 14px;
 }
 
 .tool small {
@@ -109,12 +101,31 @@ body {
   font-size: 12px;
 }
 
-.tool:hover {
-  border-color: rgba(255,60,60,0.5);
-  background: rgba(255,0,0,0.05);
+/* RECRUITMENT */
+.recruiting-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  margin-left: 8px;
+  animation: blink 1.2s infinite;
 }
 
-/* BUTTON */
+@keyframes blink {
+  50% { opacity: 0.2; }
+}
+
+.recruiting-text {
+  font-size: 11px;
+  color: #00ff88;
+}
+
+.full-text {
+  font-size: 11px;
+  color: #ff4444;
+}
+
 .btn {
   display: inline-block;
   margin-top: 15px;
@@ -124,22 +135,8 @@ body {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
-.btn:hover {
-  box-shadow: 0 0 20px red;
-}
-
-/* QUOTE */
-.quote {
-  margin-top: 15px;
-  font-size: 12px;
-  color: #777;
-  font-style: italic;
-}
-
-/* FOOTER */
 footer {
   margin-top: 40px;
   padding: 20px;
@@ -153,25 +150,23 @@ footer {
 
 <div class="header">
   <img src="https://www.citypng.com/public/uploads/preview/hd-dota-2-official-logo-png-701751694788589vbfyq561nz.png">
-  <h1>REAL[MFS]</h1>
-  <p>Win. This is the way.</p>
+  <h1 id="guildName"></h1>
+  <p id="tagline"></p>
 </div>
 
 <div class="main">
 
-  <!-- GUILD INFO -->
   <div class="card">
     <h2>GUILD</h2>
-    <div class="stat">US East Region</div>
-    <div class="stat">Platinum Tier — Top 97%</div>
-    <div class="stat">45 / 50 Members</div>
+    <div class="stat" id="region"></div>
+    <div class="stat" id="tier"></div>
 
-    <div class="quote">
-      "Say what again. I dare you."
-    </div>
+    <div class="stat" id="members"></div>
+    <div id="recruitmentStatus"></div>
+
+    <div class="quote" id="quote"></div>
   </div>
 
-  <!-- WHO WE ARE -->
   <div class="card">
     <h2>WHO WE ARE</h2>
     <div class="rules">
@@ -182,7 +177,6 @@ footer {
     </div>
   </div>
 
-  <!-- REQUIREMENTS -->
   <div class="card">
     <h2>REQUIREMENTS</h2>
     <div class="rules">
@@ -193,46 +187,14 @@ footer {
     </div>
   </div>
 
-  <!-- DOTA 2 TOOLS -->
   <div class="card">
     <h2>DOTA 2 TOOLS</h2>
-
-    <div class="tools">
-
-      <a href="https://www.dotabuff.com" target="_blank" class="tool">
-        <span>Dotabuff</span>
-        <small>Meta builds & trends</small>
-      </a>
-
-      <a href="https://apps.apple.com/us/app/pickeer-for-dota-2/id1672452114" target="_blank" class="tool">
-        <span>Pickeer App</span>
-        <small>Draft assistant (iOS)</small>
-      </a>
-
-      <a href="https://www.opendota.com" target="_blank" class="tool">
-        <span>OpenDota</span>
-        <small>Match stats & deep analysis</small>
-      </a>
-
-      <a href="https://dota2protracker.com" target="_blank" class="tool">
-        <span>Pro Tracker</span>
-        <small>High MMR builds</small>
-      </a>
-
-      <a href="https://liquipedia.net/dota2" target="_blank" class="tool">
-        <span>Liquipedia</span>
-        <small>Teams, tournaments & info</small>
-      </a>
-
-    </div>
+    <div class="tools" id="tools"></div>
   </div>
 
-  <!-- JOIN -->
   <div class="card">
     <h2>JOIN</h2>
-    <a href="https://discord.gg/BTbaQUJK4K" target="_blank" class="btn">
-      ENTER DISCORD
-    </a>
+    <a id="discordBtn" class="btn" target="_blank">ENTER DISCORD</a>
   </div>
 
 </div>
@@ -240,6 +202,52 @@ footer {
 <footer>
   © REAL[MFS] — Built different.
 </footer>
+
+<script src="assets/info.js"></script>
+
+<script>
+const data = guildData;
+
+// Basic info
+document.getElementById("guildName").textContent = data.name;
+document.getElementById("tagline").textContent = data.tagline;
+document.getElementById("region").textContent = data.region;
+document.getElementById("tier").textContent = data.tier;
+document.getElementById("quote").textContent = data.quote;
+
+// Members
+const membersEl = document.getElementById("members");
+membersEl.innerHTML = `${data.members.current} / ${data.members.max} Members`;
+
+const statusEl = document.getElementById("recruitmentStatus");
+
+if (data.members.current < data.members.max) {
+  membersEl.innerHTML += `<span class="recruiting-dot"></span>`;
+  statusEl.innerHTML = `<div class="recruiting-text">Recruitment Active</div>`;
+} else {
+  statusEl.innerHTML = `<div class="full-text">Guild is currently full</div>`;
+}
+
+// Tools
+const toolsContainer = document.getElementById("tools");
+
+data.tools.forEach(tool => {
+  const el = document.createElement("a");
+  el.href = tool.link;
+  el.target = "_blank";
+  el.className = "tool";
+
+  el.innerHTML = `
+    <span>${tool.name}</span>
+    <small>${tool.desc}</small>
+  `;
+
+  toolsContainer.appendChild(el);
+});
+
+// Discord
+document.getElementById("discordBtn").href = data.discord;
+</script>
 
 </body>
 </html>
