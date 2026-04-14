@@ -2,61 +2,75 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Real[MFS] Guild</title>
+<title>Real[MFS]</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
 body {
   margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #0d0f14;
-  color: #d6d6d6;
+  font-family: 'Orbitron', Arial, sans-serif;
+  background: radial-gradient(circle at top, #1a0000, #050507);
+  color: #e6e6e6;
 }
 
 /* HEADER */
 header {
-  background: #11131a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 20px 40px;
-  border-bottom: 1px solid #1f222b;
+  border-bottom: 1px solid rgba(255,0,0,0.2);
 }
 
-header h1 {
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.logo h1 {
   margin: 0;
-  color: #ffffff;
-  font-size: 28px;
+  color: #ff3c3c;
+  letter-spacing: 2px;
 }
 
-header span {
+.tagline {
+  font-size: 12px;
   color: #888;
-  font-size: 14px;
 }
 
 /* LAYOUT */
 .container {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 20px;
+  gap: 25px;
   padding: 30px;
 }
 
 /* CARDS */
 .card {
-  background: #151821;
-  border: 1px solid #22252e;
-  border-radius: 8px;
+  background: rgba(20,20,25,0.85);
+  border: 1px solid rgba(255,0,0,0.15);
+  border-radius: 10px;
   padding: 20px;
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(255,60,60,0.5);
+  box-shadow: 0 0 20px rgba(255,0,0,0.2);
 }
 
 .card h2 {
-  margin-top: 0;
-  font-size: 16px;
-  color: #9aa4b2;
-  letter-spacing: 1px;
-}
-
-/* GUILD INFO */
-.info p {
-  margin: 8px 0;
   font-size: 14px;
+  color: #ff4d4d;
+  letter-spacing: 1px;
 }
 
 /* MEMBERS */
@@ -64,21 +78,14 @@ header span {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid #1f222b;
-  font-size: 14px;
+  border-bottom: 1px solid #1f1f1f;
 }
 
 /* LEADERBOARD */
-.leaderboard div {
+.rank {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1px solid #1f222b;
-}
-
-/* RIGHT SIDE */
-.sidebar .card {
-  margin-bottom: 20px;
 }
 
 /* BUTTON */
@@ -86,23 +93,30 @@ header span {
   display: block;
   text-align: center;
   padding: 12px;
-  margin-top: 10px;
-  background: #c0392b;
-  color: white;
+  margin-top: 15px;
+  background: linear-gradient(90deg, #ff2a2a, #8b0000);
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 4px;
+  color: white;
   font-weight: bold;
 }
 
 .btn:hover {
-  background: #e74c3c;
+  box-shadow: 0 0 15px red;
+}
+
+/* MF QUOTE */
+.quote {
+  font-style: italic;
+  color: #aaa;
+  margin-top: 10px;
+  font-size: 13px;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
-  font-size: 12px;
   color: #666;
 }
 </style>
@@ -111,69 +125,62 @@ footer {
 <body>
 
 <header>
-  <h1>Real[MFS]</h1>
-  <span>Win.. this is the way MFs</span>
+  <div class="logo">
+    <!-- Dota Logo -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Dota_2_logo.svg">
+    <h1>REAL[MFS]</h1>
+  </div>
+  <div class="tagline">Win. No excuses.</div>
 </header>
 
 <div class="container">
 
   <!-- LEFT -->
   <div>
-    
-    <div class="card info">
-      <h2>GUILD DETAILS</h2>
+
+    <div class="card">
+      <h2>GUILD STATUS</h2>
       <p><b>Region:</b> US East</p>
-      <p><b>Rank:</b> Platinum Tier (Top 97%)</p>
+      <p><b>Tier:</b> Platinum (97th percentile)</p>
       <p><b>Members:</b> 45 / 50</p>
-      <p><b>Access:</b> Invite Only</p>
+
+      <div class="quote">
+        "Say what again. I dare you. I double dare you."  
+        – Samuel L. Jackson Energy
+      </div>
     </div>
 
     <div class="card">
-      <h2>MEMBERS</h2>
+      <h2>ACTIVE MEMBERS</h2>
 
-      <div class="member">
-        <span>Lightfoot1678</span>
-        <span>12,670 GP</span>
-      </div>
-
-      <div class="member">
-        <span>HAT3</span>
-        <span>11,830 GP</span>
-      </div>
-
-      <div class="member">
-        <span>Pablo</span>
-        <span>11,500 GP</span>
-      </div>
-
-      <div class="member">
-        <span>Broly</span>
-        <span>10,350 GP</span>
-      </div>
+      <div class="member"><span>Lightfoot1678</span><span>12,670</span></div>
+      <div class="member"><span>HAT3</span><span>11,830</span></div>
+      <div class="member"><span>Pablo</span><span>11,500</span></div>
+      <div class="member"><span>Broly</span><span>10,350</span></div>
 
     </div>
 
   </div>
 
   <!-- RIGHT -->
-  <div class="sidebar">
+  <div>
 
-    <div class="card leaderboard">
+    <div class="card">
       <h2>LEADERBOARD</h2>
 
-      <div><span>1. RealMF</span><span>223,590</span></div>
-      <div><span>2. Cornelius</span><span>221,630</span></div>
-      <div><span>3. Reijust</span><span>214,700</span></div>
-      <div><span>4. hitman89</span><span>206,810</span></div>
-      <div><span>5. No Comms</span><span>186,930</span></div>
+      <div class="rank"><span>#1 RealMF</span><span>223,590</span></div>
+      <div class="rank"><span>#2 Cornelius</span><span>221,630</span></div>
+      <div class="rank"><span>#3 Reijust</span><span>214,700</span></div>
+      <div class="rank"><span>#4 hitman89</span><span>206,810</span></div>
+      <div class="rank"><span>#5 No Comms</span><span>186,930</span></div>
 
     </div>
 
     <div class="card">
-      <h2>JOIN</h2>
-      <p>Active players only. Contracts required.</p>
+      <h2>JOIN THE MFs</h2>
+      <p>Contracts required. No inactive players.</p>
 
-      <a href="https://discord.gg/BTbaQUJK4K" class="btn" target="_blank">
+      <a href="https://discord.gg/BTbaQUJK4K" target="_blank" class="btn">
         Join Discord
       </a>
     </div>
@@ -183,7 +190,7 @@ footer {
 </div>
 
 <footer>
-  © 2026 Real[MFS]
+  © REAL[MFS] — This is the way.
 </footer>
 
 </body>
