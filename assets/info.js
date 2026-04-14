@@ -3,7 +3,7 @@ const guildData = {
   tagline: "Win. This is the way.",
 
   region: "US East Region",
-  tier: "Platinum Tier — Top 97%",
+
 
   members: {
     current: 45,

@@ -159,13 +159,12 @@ footer {
 
   <div class="card">
     <h2>GUILD</h2>
+    <div class="quote" id="quote"></div>
     <div class="stat" id="region"></div>
-    <div class="stat" id="tier"></div>
-
     <div class="stat" id="members"></div>
     <div id="recruitmentStatus"></div>
 
-    <div class="quote" id="quote"></div>
+  
   </div>
 
   <div class="card">
@@ -213,7 +212,6 @@ const data = guildData;
 document.getElementById("guildName").textContent = data.name;
 document.getElementById("tagline").textContent = data.tagline;
 document.getElementById("region").textContent = data.region;
-document.getElementById("tier").textContent = data.tier;
 document.getElementById("quote").textContent = data.quote;
 
 // Members
