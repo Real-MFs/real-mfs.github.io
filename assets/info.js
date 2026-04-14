@@ -3,11 +3,11 @@ const guildData = {
   tagline: "Win. This is the way.",
 
   titles: {
-    1_title: "GUILD",
-    2_title: "WHO WE ARE",
-    3_title: "REQUIREMENTS",
-    4_title: "DOTA 2 TOOLS",
-    5_title: "JOIN"
+    "1_title": "GUILD",
+    "2_title": "WHO WE ARE",
+    "3_title": "REQUIREMENTS",
+    "4_title": "DOTA 2 TOOLS",
+    "5_title": "JOIN"
   },
 
   guild: {
