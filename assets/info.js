@@ -1,5 +1,5 @@
 const guildData = {
-  name: "REAL[MFS]",
+  name: "REAL[MFs]",
   tagline: "Win. This is the way.",
 
   titles: {
